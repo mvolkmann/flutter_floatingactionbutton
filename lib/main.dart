@@ -36,11 +36,21 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   var fab = FloatingActionButton(
+    backgroundColor: Colors.red,
     child: Icon(Icons.ac_unit),
-    onPressed: () {
-      print('got press');
-    },
+    foregroundColor: Colors.yellow,
+    onPressed: () => print('got press'),
   );
+  /*
+  var fab = FloatingActionButton.extended(
+    backgroundColor: Colors.red,
+    icon: Icon(Icons.ac_unit), // for extended
+    foregroundColor: Colors.yellow,
+    isExtended: true,
+    label: Text('Shiver!'), // for extended
+    onPressed: () => print('got press'),
+  );
+  */
 
   Widget _buildBody() {
     return Center(
@@ -76,6 +86,7 @@ class _HomeState extends State<Home> {
       ),
       body: _buildBody(),
       floatingActionButton: fab,
+      //floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 
